@@ -1,0 +1,12 @@
+cd envs
+virtualenv projname1
+source projname1/bin/activate
+deactivate
+
+alias projname1='source ~/envs/projname1/bin/activate; cd path_to/projname1; ./setenvs.sh;'
+
+bash miniconda (install at /home/walter/envs/projname1/miniconda)
+conda update conda
+conda install scikit-learn
+conda install seaborn
+conda install ipython ipython-notebook ipython-qtconsole
