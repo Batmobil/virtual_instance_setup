@@ -12,3 +12,7 @@ conda install cython
 conda install scikit-learn
 conda install seaborn
 conda install ipython ipython-notebook ipython-qtconsole
+
+
+
+$ pip freeze > requirements.txt
