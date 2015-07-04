@@ -10,8 +10,13 @@ conda update conda
 conda install futures
 conda install cython
 conda install scikit-learn
+conda install pandas
 conda install seaborn
 conda install ipython ipython-notebook ipython-qtconsole
+
+conda install Theano
+pip install patsy --no-deps
+pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
 
 
