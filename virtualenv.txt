@@ -8,19 +8,17 @@ alias projname1='source ~/envs/projname1/bin/activate; cd path_to/projname1; ./s
 bash miniconda (install at /home/walter/envs/projname1/miniconda)
 
 conda install futures cython scikit-learn pandas seaborn ipython ipython-notebook ipython-qtconsole
-pip install --upgrade pip
-
-
-deap
-
-conda install Theano
-pip install patsy --no-deps
-pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
 cd xgboost
 git pull
 bash build.sh
 
+pip install deap
 
+conda install Theano
+pip install patsy --no-deps
+pip install git+https://github.com/pymc-devs/pymc3 --no-deps
+
+pip install --upgrade pip
 
 $ pip freeze > requirements.txt
