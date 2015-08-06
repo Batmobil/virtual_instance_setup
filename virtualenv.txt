@@ -16,7 +16,9 @@ bash build.sh
 pip install deap
 
 conda install Theano
-pip install patsy --no-deps
+conda install patsy
+conda install statsmodels
+
 pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
 pip install --upgrade pip
