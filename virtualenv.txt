@@ -14,6 +14,8 @@ conda install futures cython scikit-learn pandas seaborn jupyter
 cd xgboost
 git pull
 bash build.sh
+cd python-package
+python setup.py install
 
 pip install git+git://github.com/deap/deap
 conda install Theano
