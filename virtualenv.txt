@@ -3,9 +3,11 @@ virtualenv projname1
 source projname1/bin/activate
 deactivate
 
-alias projname1='source ~/envs/projname1/bin/activate; cd path_to/projname1; ./setenvs.sh;'
+subl .bashrc
+alias projname1='source ~/envs/projname1/bin/activate; cd path_to/projname1'
 
 bash miniconda (install at /home/walter/envs/projname1/miniconda)
+source .bashrc
 
 conda install futures cython scikit-learn pandas seaborn jupyter
 
@@ -13,7 +15,7 @@ cd xgboost
 git pull
 bash build.sh
 
-pip install deap
+pip install git+git://github.com/deap/deap
 conda install Theano
 conda install patsy
 conda install statsmodels
@@ -22,4 +24,4 @@ conda install numba
 pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
 
-$ pip freeze > requirements.txt
+pip freeze > requirements.txt
