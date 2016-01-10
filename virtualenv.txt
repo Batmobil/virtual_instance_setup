@@ -3,6 +3,8 @@ virtualenv projname1
 source projname1/bin/activate
 deactivate
 
+pip install pip --upgrade
+
 subl .bashrc
 alias projname1='source ~/envs/projname1/bin/activate; cd path_to/projname1'
 
@@ -11,7 +13,6 @@ source .bashrc
 
 conda install futures cython scikit-learn pandas seaborn jupyter
 pip install git+git://github.com/Theano/Theano.git
-
 
 cd xgboost
 git pull
@@ -29,5 +30,5 @@ conda install numba
 
 pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
-
+cd to project folder
 pip freeze > requirements.txt
