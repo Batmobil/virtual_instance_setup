@@ -37,5 +37,7 @@ conda install numba
 
 pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
+conda install -c r r-essentials
+
 cd to project folder
 pip freeze > requirements.txt
