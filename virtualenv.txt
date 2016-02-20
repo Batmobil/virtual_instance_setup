@@ -1,26 +1,30 @@
 cd envs
-virtualenv projname1
-source projname1/bin/activate
+virtualenv projname
+source projname/bin/activate
 deactivate
 
 pip install pip --upgrade
 
+cd ..
 subl .bashrc
-alias projname1='source ~/envs/projname1/bin/activate; cd path_to/projname1'
+alias projname1='source ~/envs/projname/bin/activate; cd path_to/projname'
 
-bash miniconda (install at /home/walter/envs/projname1/miniconda)
+cd Downloads
+bash Miniconda-latest-Linux-x86_64.sh (install at /home/walter/envs/projname/miniconda, don't prepend path)
+cd ..
 source .bashrc
+projname
 
+conda update conda
 conda install futures cython scikit-learn pandas seaborn jupyter
 
-
-git clone git://github.com/Theano/Theano.git
+cd
+#git clone git://github.com/Theano/Theano.git
 cd Theano
+git pull
 python setup.py develop
 
-
-
-
+cd
 cd xgboost
 git pull
 bash build.sh
@@ -28,16 +32,12 @@ cd python-package
 python setup.py install
 
 pip install git+git://github.com/deap/deap
-
 pip install keras
-
-conda install patsy
-conda install statsmodels
-conda install numba
+conda install patsy statsmodels numba
 
 pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
-conda install -c r r-essentials
+#conda install -c r r-essentials
 
 cd to project folder
 pip freeze > requirements.txt
