@@ -5,6 +5,12 @@ deactivate
 
 pip install pip --upgrade
 
+OR . . .
+conda create --name projname python=2
+source activate p2
+source deactivate
+
+
 cd ..
 subl .bashrc
 alias projname1='source ~/envs/projname/bin/activate; cd path_to/projname'
@@ -25,15 +31,18 @@ git pull
 python setup.py develop
 
 cd
+#git clone --recursive https://github.com/dmlc/xgboost
 cd xgboost
 git pull
-bash build.sh
+#bash build.sh
+make -j4
 cd python-package
 python setup.py install
 
 pip install git+git://github.com/deap/deap
 pip install keras
 conda install patsy statsmodels numba
+
 
 pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
