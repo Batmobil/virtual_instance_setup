@@ -1,50 +1,58 @@
+conda create --name projname python=2
+source activate projname
+source deactivate
+
+'''
+OR . . .
 cd envs
 virtualenv projname
 source projname/bin/activate
 deactivate
-
 pip install pip --upgrade
-
-OR . . .
-conda create --name projname python=2
-source activate p2
-source deactivate
+'''
 
 
-cd ..
 subl .bashrc
-alias projname1='source ~/envs/projname/bin/activate; cd path_to/projname'
+alias projname='source activate projname; cd /media/walter/Data/kaggle_projname/code'
 
+'''
 cd Downloads
 bash Miniconda-latest-Linux-x86_64.sh (install at /home/walter/envs/projname/miniconda, don't prepend path)
 cd ..
 source .bashrc
 projname
+'''
 
-conda update conda
-conda install futures cython scikit-learn pandas seaborn jupyter
+conda install futures cython scikit-learn pandas seaborn jupyter joblib
 
-cd
-#git clone git://github.com/Theano/Theano.git
-cd Theano
-git pull
-python setup.py develop
 
-cd
+
+## XGBoost ##
 #git clone --recursive https://github.com/dmlc/xgboost
 cd xgboost
-git pull
-#bash build.sh
+git pull --recurse-submodules
+git submodule update --recursive
 make -j4
 cd python-package
 python setup.py install
 
 pip install git+git://github.com/deap/deap
-pip install keras
+
 conda install patsy statsmodels numba
 
+## pymc3 ##
+git clone git://github.com/pymc-devs/pymc3.git
+python setup.py install # May need to comment out Theano dep links in setup.py
 
-pip install git+https://github.com/pymc-devs/pymc3 --no-deps
+## Theano ##
+#git clone git://github.com/Theano/Theano.git
+cd Theano
+git pull
+python setup.py develop
+
+pip install keras
+
+#pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
 #conda install -c r r-essentials
 
