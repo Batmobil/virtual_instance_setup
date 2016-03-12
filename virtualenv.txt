@@ -43,6 +43,8 @@ conda install patsy statsmodels numba
 ## pymc3 ##
 git clone git://github.com/pymc-devs/pymc3.git
 python setup.py install # May need to comment out Theano dep links in setup.py
+(pip install -U git+https://github.com/pymc-devs/pymc3.git --no-deps)
+
 
 ## Theano ##
 #git clone git://github.com/Theano/Theano.git
