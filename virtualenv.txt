@@ -48,10 +48,6 @@ git clone git://github.com/pymc-devs/pymc3.git
 python setup.py install # May need to comment out Theano dep links in setup.py
 (pip install -U git+https://github.com/pymc-devs/pymc3.git --no-deps)
 
-
-
-
-
 pip install keras
 
 #pip install git+https://github.com/pymc-devs/pymc3 --no-deps
@@ -60,3 +56,8 @@ pip install keras
 
 cd to project folder
 pip freeze > requirements.txt
+
+
+### Windows
+
+conda install spyder
