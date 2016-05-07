@@ -1,32 +1,12 @@
-conda create --name projname python=2
-source activate projname
-source deactivate
-
-'''
-OR . . .
-cd envs
-virtualenv projname
-source projname/bin/activate
-deactivate
-pip install pip --upgrade
-'''
-
-
 subl .bashrc
 alias projname='source activate projname; cd /media/walter/Data/kaggle_projname/code'
 
-'''
-cd Downloads
-bash Miniconda-latest-Linux-x86_64.sh (install at /home/walter/envs/projname/miniconda, don't prepend path)
-cd ..
-source .bashrc
-projname
-'''
+conda create --name projname python=2
+source activate projname
+# source deactivate
 
-conda install futures cython scikit-learn pandas seaborn jupyter joblib
-
+conda install futures cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels spyder
 pip install feather-format
-
 
 
 ## XGBoost ##
@@ -38,12 +18,9 @@ make -j4
 cd python-package
 python setup.py install
 
-pip install git+git://github.com/deap/deap
-
-conda install patsy statsmodels
-
 ## Theano ##
 # pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+cd Theano
 git pull
 python setup.py install
 
@@ -52,7 +29,8 @@ git clone git://github.com/pymc-devs/pymc3.git
 python setup.py install # May need to comment out Theano dep links in setup.py
 (pip install -U git+https://github.com/pymc-devs/pymc3.git --no-deps)
 
-pip install keras
+pip install keras  # careful about over-writing Theano
+pip install git+git://github.com/deap/deap
 
 #pip install git+https://github.com/pymc-devs/pymc3 --no-deps
 
@@ -60,8 +38,3 @@ pip install keras
 
 cd to project folder
 pip freeze > requirements.txt
-
-
-### Windows
-
-conda install spyder
