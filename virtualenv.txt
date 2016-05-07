@@ -43,7 +43,9 @@ pip install git+git://github.com/deap/deap
 conda install patsy statsmodels
 
 ## Theano ##
-pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+# pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+git pull
+python setup.py install
 
 ## pymc3 ##
 git clone git://github.com/pymc-devs/pymc3.git
