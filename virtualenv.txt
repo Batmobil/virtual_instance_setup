@@ -29,7 +29,7 @@ git clone git://github.com/pymc-devs/pymc3.git
 python setup.py install # May need to comment out Theano dep links in setup.py
 (pip install -U git+https://github.com/pymc-devs/pymc3.git --no-deps)
 
-pip install keras  # careful about over-writing Theano
+pip install git+git://github.com/fchollet/keras@master
 pip install git+git://github.com/deap/deap
 
 #pip install git+https://github.com/pymc-devs/pymc3 --no-deps
