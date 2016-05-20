@@ -29,6 +29,7 @@ python setup.py install
 
 pip install git+git://github.com/fchollet/keras@master
 pip install git+git://github.com/pymc-devs/pymc3@master --no-deps
+pip install git+git://github.com/mcmcplotlib/mcmcplotlib.git
 pip install git+git://github.com/deap/deap
 
 
