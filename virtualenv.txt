@@ -7,7 +7,7 @@ conda create --name projname python=2
 source activate projname
 # source deactivate
 
-conda install futures cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels pillow spyder
+conda install futures cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels pillow opencv h5py spyder
 pip install --upgrade pip
 pip install feather-format
 
