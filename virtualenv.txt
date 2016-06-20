@@ -33,8 +33,6 @@ pip install git+git://github.com/pymc-devs/pymc3@master --no-deps
 pip install git+git://github.com/mcmcplotlib/mcmcplotlib.git@master
 pip install git+git://github.com/deap/deap
 
-# for opencv
-http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/
 
 #conda install -c r r-essentials
 
