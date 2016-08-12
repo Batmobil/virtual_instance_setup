@@ -27,11 +27,11 @@ cd Theano
 git pull
 python setup.py install
 
-pip install git+git://github.com/danielhomola/boruta_py@master
+pip install git+git://github.com/danielhomola/boruta_py@master --no-deps
 pip install git+git://github.com/fchollet/keras@master --no-deps
 pip install git+git://github.com/pymc-devs/pymc3@master --no-deps
-pip install git+git://github.com/mcmcplotlib/mcmcplotlib.git@master
-pip install git+git://github.com/deap/deap
+pip install git+git://github.com/mcmcplotlib/mcmcplotlib.git@master --no-deps
+pip install git+git://github.com/deap/deap --no-deps
 
 
 #conda install -c r r-essentials
