@@ -3,7 +3,7 @@ alias projname='source activate projname; cd /media/walter/Data/kaggle_projname/
 
 conda update --all
 
-conda create --name projname python=2
+conda create --name projname python=3
 source activate projname
 # source deactivate
 
@@ -20,14 +20,17 @@ cd xgboost
 git pull --recurse-submodules
 git submodule update --recursive
 make -j4
-cd python-package
-python setup.py install
+# cd python-package
+# python setup.py install
 
 ## Theano ##
 # pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 cd Theano
 git pull
-python setup.py install
+# python setup.py install
+
+python ~/xgboost/python-package/setup.py install
+python ~/Theano/setup.py install
 
 pip install git+git://github.com/danielhomola/boruta_py@master --no-deps
 pip install git+git://github.com/fchollet/keras@master --no-deps
