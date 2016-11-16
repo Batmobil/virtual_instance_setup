@@ -8,7 +8,8 @@ source activate projname
 # source deactivate
 
 conda install futures cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels spyder h5py
-#conda install pillow opencv scikit-image
+#conda install -c menpo opencv3=3.1.0
+#conda install pillow scikit-image
 
 pip install natsort
 pip install feather-format
