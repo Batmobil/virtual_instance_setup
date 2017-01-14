@@ -1,6 +1,7 @@
 subl .bashrc
 alias projname='source activate projname; cd /media/walter/Data/kaggle_projname/code'
 
+conda update conda
 conda update --all
 
 conda create --name projname python=3
