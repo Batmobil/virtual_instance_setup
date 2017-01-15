@@ -43,3 +43,23 @@ pip install git+git://github.com/deap/deap --no-deps
 
 cd to project folder
 pip freeze > requirements.txt
+
+
+
+# ~~~~~~~~~~~ SLOTH ~~~~~~~~~~
+
+To install sloth, you'll need pyqt4. If you're using anaconda, you can install using:
+
+conda install -c anaconda pyqt=4.11.4
+
+The only other dependency:
+conda install scikit-image
+
+To run:
+
+sloth --config fish_config.py annotations_train.json
+
+Generating the .json file:
+
+find ../input/train/ -iname "*.jpg" | sort | xargs sloth appendfiles annotations_train.json
+find ../input/test_stg1/ -iname "*.jpg" | sort | xargs sloth appendfiles annotations_test_stg1.json
