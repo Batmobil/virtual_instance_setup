@@ -16,6 +16,7 @@ conda install -c conda-forge jupyter_contrib_nbextensions
 #conda install pillow scikit-image
 
 # conda install -c sebp scikit-survival
+# pip install lifelines
 
 pip install natsort
 pip install feather-format
