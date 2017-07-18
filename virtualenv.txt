@@ -23,6 +23,8 @@ conda install sypder
 pip install natsort
 pip install feather-format
 
+sudo apt-get update
+sudo apt-get install build-essential
 
 ## XGBoost ##
 #git clone --recursive https://github.com/dmlc/xgboost
