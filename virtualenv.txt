@@ -8,8 +8,10 @@ conda create --name projname python=3.5
 source activate projname
 # source deactivate
 
-conda install cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels spyder h5py scikit-image
+conda install cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels h5py scikit-image
 conda install -c conda-forge jupyter_contrib_nbextensions
+
+conda install sypder
 # http://localhost:8888/nbextensions
 
 #conda install -c menpo opencv3=3.1.0
