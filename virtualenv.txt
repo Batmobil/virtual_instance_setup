@@ -50,6 +50,13 @@ c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
 
 https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux
 
+sudo mkdir -p /mnt/ssd
+sudo mount -o defaults /dev/sdb1 /mnt/ssd
+
+sudo vi /etc/fstab
+LABEL=ssd /mnt/ssd ext4 defaults 0 2
+
+
 
 jupyter notebook
 
