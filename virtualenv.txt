@@ -15,6 +15,8 @@ source activate <projname>
 conda install cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels h5py scikit-image
 conda install -c conda-forge jupyter_contrib_nbextensions
 
+pip install image_match --no-deps
+
 ## Xgboost
 git clone --recursive https://github.com/dmlc/xgboost
 cd xgboost
@@ -35,12 +37,18 @@ vi .bashrc
 alias happywhale='source activate happywhale; cd /home/inversion/KaggleCompetitions/HappyWhale'
 source .bashrc
 
+jupyter notebook --generate-config
+jupyter notebook password
+copy from json to jupyter_notebook_config.py
 
-jupyter notebook --no-browser
+
+#jupass=`python -c "from notebook.auth import passwd; print(passwd())"`
+#echo "c.NotebookApp.password = u'"$jupass"'" >> $HOME/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.ip = '*'
+c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
 
 
-
-
+jupyter notebook
 
 
 
