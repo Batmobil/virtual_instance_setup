@@ -48,6 +48,9 @@ echo "c.NotebookApp.ip = '*'
 c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
 
 
+https://www.digitalocean.com/community/tutorials/how-to-partition-and-format-storage-devices-in-linux
+
+
 jupyter notebook
 
 
