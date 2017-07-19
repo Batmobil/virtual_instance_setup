@@ -1,3 +1,52 @@
+sudo apt-get update
+sudo apt-get install htop
+sudo apt-get install build-essential
+
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh 
+rm Miniconda3-latest-Linux-x86_64.sh
+
+source .bashrc
+conda update conda
+
+conda create --name <projname>
+source activate <projname>
+
+conda install cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels h5py scikit-image
+conda install -c conda-forge jupyter_contrib_nbextensions
+
+## Xgboost
+git clone --recursive https://github.com/dmlc/xgboost
+cd xgboost
+git pull --recurse-submodules
+git submodule update --recursive
+make -j4
+cd python-package
+python setup.py install
+
+git init KaggleCompetitions
+cd KaggleCompetitions
+git remote add origin https://github.com/Kaggle/KaggleCompetitions
+git config core.sparsecheckout true
+echo "HappyWhale/*" >> .git/info/sparse-checkout
+git pull --depth=1 origin master
+
+vi .bashrc
+alias happywhale='source activate happywhale; cd /home/inversion/KaggleCompetitions/HappyWhale'
+source .bashrc
+
+
+jupyter notebook --no-browser
+
+
+
+
+
+
+
+
+
+
 subl .bashrc
 alias projname='source activate projname; cd /media/walter/Data/kaggle_projname/code'
 
