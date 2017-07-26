@@ -17,6 +17,21 @@ conda install -c conda-forge jupyter_contrib_nbextensions
 
 pip install image_match --no-deps
 
+
+# Elastic Search and Dependencies
+
+conda install -c conda-forge elasticsearch
+
+java -version
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+java -version
+curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.tar.gz
+tar -xvf elasticsearch-5.5.1.tar.gz
+./elasticsearch-5.5.1/bin/elasticsearch
+
+
 ## Xgboost
 git clone --recursive https://github.com/dmlc/xgboost
 cd xgboost
