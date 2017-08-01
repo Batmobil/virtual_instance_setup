@@ -16,7 +16,7 @@ conda install cython scikit-learn pandas seaborn jupyter joblib patsy statsmodel
 conda install -c conda-forge jupyter_contrib_nbextensions
 
 pip install image_match --no-deps
-
+conda install -c conda-forge tqdm
 
 # Elastic Search and Dependencies
 
