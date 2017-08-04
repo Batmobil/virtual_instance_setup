@@ -72,6 +72,8 @@ git pull
 jupyter nbextension install facets/facets-dist/ --user
 conda install -c anaconda protobuf 
 
+cp ~/facets/facets_template.ipynb ~/KaggleCompetitions/PROJNAME
+
 # for large amounts of data, start notebook with (actually, use the jn alias!):
 jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000
 
