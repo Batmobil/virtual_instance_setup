@@ -1,15 +1,38 @@
-sudo apt-get update
-sudo apt-get install htop
-sudo apt-get install build-essential
 
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh 
-rm Miniconda3-latest-Linux-x86_64.sh
+### for brand-new only
+  sudo apt-get update
+  sudo apt-get install htop
+  sudo apt-get install build-essential
 
-source .bashrc
+  wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  bash Miniconda3-latest-Linux-x86_64.sh 
+  rm Miniconda3-latest-Linux-x86_64.sh
+
+  source .bashrc
+  
 conda update conda
+conda update --all
 
 conda create --name <projname>
+
+# create /mnt/ssd data folder
+sudo mkdir /mnt/ssd/kaggle-PROJNAME
+sudo chown inversion /mnt/ssd/kaggle-PROJNAME
+
+# create GS data bucket
+gsutil mb -c regional -l us-central1 gs://kaggle-PROJNAME
+
+# create the github repo
+cd KaggleCompetitions
+git pull
+mkdir PROJNAME
+git add PROJNAME
+
+# create alias
+vim ~/.bashrc
+G, yy, p, <edit>, <save>
+source .bashrc
+
 source activate <projname>
 
 conda install cython scikit-learn pandas seaborn jupyter joblib patsy statsmodels h5py scikit-image
@@ -18,18 +41,18 @@ conda install -c conda-forge jupyter_contrib_nbextensions
 pip install image_match --no-deps
 conda install -c conda-forge tqdm
 
-# Elastic Search and Dependencies
-
+# Elastic Search and Dependencies (for python)
 conda install -c conda-forge elasticsearch
 
-java -version
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
-java -version
-curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.tar.gz
-tar -xvf elasticsearch-5.5.1.tar.gz
-./elasticsearch-5.5.1/bin/elasticsearch
+# To install Elastic Search driver for the first time . . .
+  java -version
+  sudo add-apt-repository ppa:webupd8team/java
+  sudo apt-get update
+  sudo apt-get install oracle-java8-installer
+  java -version
+  curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.1.tar.gz
+  tar -xvf elasticsearch-5.5.1.tar.gz
+  ./elasticsearch-5.5.1/bin/elasticsearch
 
 
 ## Xgboost
@@ -41,16 +64,38 @@ make -j4
 cd python-package
 python setup.py install
 
-git init KaggleCompetitions
-cd KaggleCompetitions
-git remote add origin https://github.com/Kaggle/KaggleCompetitions
-git config core.sparsecheckout true
-echo "HappyWhale/*" >> .git/info/sparse-checkout
-git pull --depth=1 origin master
+# Facets visualization ~~~~~
 
-vi .bashrc
-alias happywhale='source activate happywhale; cd /home/inversion/KaggleCompetitions/HappyWhale'
-source .bashrc
+# git clone https://github.com/PAIR-code/facets
+cd facets
+git pull
+jupyter nbextension install facets/facets-dist/ --user
+conda install -c anaconda protobuf 
+
+# for large amounts of data, start notebook with (actually, use the jn alias!):
+jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000
+
+# put in notebook for wide layout
+from IPython.core.display import display, HTML
+display(HTML("<style>.container { width:100% !important; }</style>"))
+
+#  ~~~~~
+
+
+
+
+
+# How to do a sparse clone
+  git init KaggleCompetitions
+  cd KaggleCompetitions
+  git remote add origin https://github.com/Kaggle/KaggleCompetitions
+  git config core.sparsecheckout true
+  echo "HappyWhale/*" >> .git/info/sparse-checkout
+  git pull --depth=1 origin master
+
+
+
+
 
 jupyter notebook --generate-config
 jupyter notebook password
